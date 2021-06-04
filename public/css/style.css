@@ -1,0 +1,16 @@
+.circle {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+}
+
+.menu li  ul{
+    top: 25px;
+    left: 0px;
+}
+
+.menu li:hover ul, .menu li.over ul{
+    display:block;
+    background: white;
+    color: #10B981;
+}
