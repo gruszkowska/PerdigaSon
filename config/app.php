@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://perdigason.herokuapp.com/'),
+    'url' => env('APP_URL', 'perdigason.herokuapp.com/'),
 
     'asset_url' => env('ASSET_URL', null),
 
