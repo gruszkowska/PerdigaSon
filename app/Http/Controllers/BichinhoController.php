@@ -119,6 +119,8 @@ class BichinhoController extends Controller
      */
     public function destroy(Bichinho $bichinho)
     {
-        //
+        $bichinho->delete();
+
+        return redirect()->route('home');
     }
 }

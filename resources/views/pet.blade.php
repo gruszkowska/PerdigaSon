@@ -3,8 +3,16 @@
 @section('content')
     <main class="min-h-screen flex justify-center max-w-screen">
         <div class="px-15 py-10 w-full">
-            <div class="mb-10">
+            <div class="mb-10 flex flex-row justify-between">
                 <span class="font-light text-xl sm:mb-8 sm:text-2xl text-green-500">{{ $bichinho->pet }}</span>
+                <form id="form_{{ $bichinho['id'] }}" method="post"
+                    action="{{ route('bichinho.destroy', $bichinho['id']) }}">
+                    @csrf
+                    @method('DELETE')
+                    <a href="#"
+                        onclick="document.getElementById('form_{{ $bichinho['id'] }}').submit()"><i
+                            class="far fa-trash-alt"></i></a>
+                </form>
             </div>
             <div class="grid grid-cols-1 gap-6 w-full">
                 <div class="bg-white p-6 rounded-xl shadow-xl min-h-full relative">
