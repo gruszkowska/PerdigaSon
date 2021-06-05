@@ -28,7 +28,7 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
+                        <div class="mt-10 flex flex-col gap-5 text-sm md:text-base justify-between">
                             @foreach ($vacina as $vac)
                                 <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <a href="{{ route('vacina.show', $vac['id']) }}">
@@ -69,7 +69,7 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
+                        <div class="mt-10 flex flex-col gap-5 text-sm md:text-base justify-between">
                             @foreach ($vermifugo as $ver)
                             <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">                                    
                                 <a href="{{ route('vermifugo.show', $ver['id']) }}">
@@ -110,7 +110,7 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
+                        <div class="mt-10 flex flex-col gap-5 text-sm md:text-base justify-between">
                             @foreach ($medicamento as $med)
                             <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">                                    
                                 <a href="{{ route('medicamento.show', $med['id']) }}">
@@ -158,7 +158,7 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
+                        <div class="mt-10 flex flex-col gap-5 text-sm md:text-base justify-between">
                             @foreach ($alimento as $ali)
                                 <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <span>{{ date('d/m/Y', strtotime($ali->data)) }}</span>
@@ -192,7 +192,7 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
+                        <div class="mt-10 flex flex-col gap-5 text-sm md:text-base justify-between">
                             @foreach ($crescimento as $cresc)
                                 <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <span>{{ date('d/m/Y', strtotime($cresc->data)) }}</span>
@@ -226,7 +226,7 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
+                        <div class="mt-10 flex flex-col gap-5 text-sm md:text-base justify-between">
                             @foreach ($outros as $outro)
                                 <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <span>{{ date('d/m/Y', strtotime($outro->data)) }}</span>

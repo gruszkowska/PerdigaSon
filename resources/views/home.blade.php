@@ -12,20 +12,23 @@
                 </p>
             </div>
             <div class="flex flex-col md:flex-row gap-4 container rounded-md m-2 bg-white w-full">
-                <div class="md:w-1/2 p-10 justify-center bg-green-500 rounded-l-md pb-20">
-                    <h1 class="text-white text-center font-light tracking-wider text-2xl sm:mb-8 sm:text-4xl">
-                        Selecione um Pet
-                    </h1>
-                    <div class="flex flex-col items-center justify-center mt-20 md:mt-32">
-                        @foreach ($bichinho as $key => $pet)
-                        <ul class="text-white text-center font-light tracking-wider text-xl sm:mb-8 sm:text-2xl flex flex-col gap-y-4">
-                            <li>
-                                <a href="{{ route('bichinho.show', ['bichinho' => $pet->id]) }}" class="no-underline hover:underline">{{ $pet->pet }}</a>
-                            </li>
-                        </ul> 
-                        @endforeach
+                @isset($bichinho)
+                    <div class="md:w-1/2 p-10 justify-center bg-green-500 rounded-l-md pb-20">
+                        <h1 class="text-white text-center font-light tracking-wider text-2xl sm:mb-8 sm:text-4xl">
+                            Selecione um Pet
+                        </h1>
+                        <div class="flex flex-col items-center justify-center mt-20 md:mt-32">
+                            @foreach ($bichinho as $key => $pet)
+                            <ul class="text-white text-center font-light tracking-wider text-xl sm:mb-8 sm:text-2xl flex flex-col gap-y-4">
+                                <li>
+                                    <a href="{{ route('bichinho.show', ['bichinho' => $pet->id]) }}" class="no-underline hover:underline">{{ $pet->pet }}</a>
+                                </li>
+                            </ul> 
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                @endisset
+                
 
                 <div class="md:w-1/2 p-10">
                     <h1 class="text-green-500 text-center font-light tracking-wider text-2xl sm:mb-8 sm:text-4xl">
@@ -55,7 +58,7 @@
                                 </label>
 
                                 <select name="especie" class="block text-black text-sm mb-2 sm:mb-4">
-                                    <option>-- Selecione uma espécie --</option>
+                                    <option value="" selected disabled>-- Selecione uma espécie --</option>
                                     <option value="canino" {{ old('especie') }}>Cachorro</option>
                                     <option value="felino" {{ old('especie') }}>Gato</option>
                                     <option value="ave" {{ old('especie') }}>Pássaro</option>

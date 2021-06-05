@@ -19,7 +19,7 @@
                             </label>
 
                             <select name="pet_id" class="block text-black text-sm mb-2 sm:mb-4" autofocus required>
-                                <option>-- Selecione um Pet --</option>
+                                <option value="" selected disabled>-- Selecione um Pet --</option>
                                 @foreach ($bichinho as $pet)
                                     <option value="{{$pet->id}}">{{$pet->pet}}</option>
                                 @endforeach
