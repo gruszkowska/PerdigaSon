@@ -2,8 +2,8 @@
 
 @section('content')
     <main class="min-h-screen flex justify-center max-w-screen">
-        <div class="px-15 py-10 w-full">
-            <div class="mb-10 flex flex-row justify-between">
+        <div class="px-5 md:px-15 py-10 w-full">
+            <div class="mb-10 flex flex-row justify-between items-center">
                 <span class="font-light text-xl sm:mb-8 sm:text-2xl text-green-500">{{ $bichinho->pet }}</span>
                 <form id="form_{{ $bichinho['id'] }}" method="post"
                     action="{{ route('bichinho.destroy', $bichinho['id']) }}">
@@ -11,7 +11,7 @@
                     @method('DELETE')
                     <a href="#"
                         onclick="document.getElementById('form_{{ $bichinho['id'] }}').submit()"><i
-                            class="far fa-trash-alt"></i></a>
+                            class="text-red-600 far fa-trash-alt"></i></a>
                 </form>
             </div>
             <div class="grid grid-cols-1 gap-6 w-full">
@@ -28,9 +28,9 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5">
+                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
                             @foreach ($vacina as $vac)
-                                <div class="flex flex-row gap-4 justify-between items-center">
+                                <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <a href="{{ route('vacina.show', $vac['id']) }}">
                                         @if($vac->check == 0)
                                             <i class="text-red-600 far fa-square"></i>
@@ -69,10 +69,10 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5">
+                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
                             @foreach ($vermifugo as $ver)
-                                <div class="flex flex-row gap-4 justify-between items-center">
-                                    <a href="{{ route('vermifugo.show', $ver['id']) }}">
+                            <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">                                    
+                                <a href="{{ route('vermifugo.show', $ver['id']) }}">
                                         @if($ver->check == 0)
                                             <i class="text-red-600 far fa-square"></i>
                                         @elseif($ver->check == 1)
@@ -110,21 +110,17 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5">
+                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
                             @foreach ($medicamento as $med)
-                                <div class="flex flex-row gap-4 justify-between items-center">
-                                    <a href="{{ route('medicamento.show', $med['id']) }}">
+                            <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">                                    
+                                <a href="{{ route('medicamento.show', $med['id']) }}">
                                         @if($med->check == 0)
                                             <i class="text-red-600 far fa-square"></i>
                                         @elseif($med->check == 1)
                                             <i class="text-green-500 far fa-check-square"></i>
                                         @endif
                                     </a>
-                                    <span>{{ date('d/m/Y', strtotime($med->data_inicio)) }}</span>
-                                    @isset($med->data_final)
-                                        <i class="text-sm fas fa-minus"></i>
-                                        <span>{{ date('d/m/Y', strtotime($med->data_final)) }}</span>                                        
-                                    @endisset
+                                    <span>{{ date('d/m/Y', strtotime($med->data_inicio)) }} @isset($med->data_final) - {{ date('d/m/Y', strtotime($med->data_final)) }} @endisset</span>
                                     <i class="mx-2 text-sm fas fa-arrow-right"></i>
                                     <span class="flex-grow">
                                         {{ $med->medicamento }} ({{ $med->dosagem }} 
@@ -162,9 +158,9 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5">
+                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
                             @foreach ($alimento as $ali)
-                                <div class="flex flex-row gap-4 justify-between items-center">
+                                <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <span>{{ date('d/m/Y', strtotime($ali->data)) }}</span>
                                     <i class="mx-2 text-sm fas fa-arrow-right"></i>
                                     <span class="flex-grow">{{ $ali->descricao }}</span>
@@ -196,9 +192,9 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5">
+                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
                             @foreach ($crescimento as $cresc)
-                                <div class="flex flex-row gap-4 justify-between items-center">
+                                <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <span>{{ date('d/m/Y', strtotime($cresc->data)) }}</span>
                                     <i class="mx-2 text-sm fas fa-arrow-right"></i>
                                     <span class="flex-grow">{{ $cresc->kg }},{{ $cresc->g }} Kg</span>
@@ -230,9 +226,9 @@
 
                         <div class="border-t-2"></div>
 
-                        <div class="mt-10 flex flex-col gap-5">
+                        <div class="mt-10 flex flex-col gap-5 text-xs md:text-base justify-between">
                             @foreach ($outros as $outro)
-                                <div class="flex flex-row gap-4 justify-between items-center">
+                                <div class="flex flex-row gap-2 md:gap-4 items-center justify-between">
                                     <span>{{ date('d/m/Y', strtotime($outro->data)) }}</span>
                                     <i class="mx-2 text-sm fas fa-arrow-right"></i>
                                     <span class="flex-grow">{{ $outro->outros }}</span>
