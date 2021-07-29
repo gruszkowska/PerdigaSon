@@ -66,7 +66,7 @@
 
         @yield('content')
 
-        <footer class="bg-green-500 py-4 text-white mt-5">
+        <footer class="bg-green-500 py-4 text-white mt-5 static bottom-0">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <p class="font-light tracking-wider text-xl sm:text-2xl">{{ config('app.name', 'PerdigaSon') }}</p>
