@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'PerdigaSon') }}</title>
 
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -30,12 +32,12 @@
                     @guest
                         <a href="{{ url('/') }}"
                             class="font-light tracking-wider text-2xl sm:mb-8 sm:text-4xl no-underline">
-                            {{ config('app.name', 'PerdigaSon') }}
+                            {<img src="img/logo.png" class="w-1/3" alt="{{ config('app.name', 'PerdigaSon') }}">
                         </a>
                     @else
                         <a href="{{ url('/home') }}"
                             class="font-light tracking-wider text-2xl sm:mb-8 sm:text-4xl no-underline">
-                            {{ config('app.name', 'PerdigaSon') }}
+                            <img src="img/logo.png" class="w-1/3" alt="{{ config('app.name', 'PerdigaSon') }}">
                         </a>
                     @endguest
                 </div>
