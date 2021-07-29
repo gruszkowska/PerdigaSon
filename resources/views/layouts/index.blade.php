@@ -49,7 +49,7 @@
                     @else
                         <div>
                             <ul class="menu px-5 text-center">
-                                <li class="relative px-5"><a href="#">{{ Auth::user()->name }}</a>
+                                <li class="relative px-5"><a href="{{ route('home') }}">{{ Auth::user()->name }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -66,7 +66,7 @@
 
         @yield('content')
 
-        <footer class="bg-green-500 py-4 text-white">
+        <footer class="bg-green-500 py-4 text-white mt-5">
             <div class="container mx-auto flex justify-between items-center px-6">
                 <div>
                     <p class="font-light tracking-wider text-xl sm:text-2xl">{{ config('app.name', 'PerdigaSon') }}</p>
